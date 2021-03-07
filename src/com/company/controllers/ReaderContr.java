@@ -15,6 +15,6 @@ public class ReaderContr {
     }
     public String getDateOfMembershipById(int id){
         Reader reader = repo5.getDateOfMembershipById(id);
-         return reader==null ? "Reader's date of membership by this id "
+         return reader==null ? "Reader's date of membership by this id was not found" : ""
     }
 }
