@@ -41,11 +41,11 @@ public class BookInfo extends Books{
         this.dueDate = dueDate;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
@@ -57,23 +57,33 @@ public class BookInfo extends Books{
         this.dateOfPurchase = dateOfPurchase;
     }
 
-    public String getPublicationDate() {
-        return publicationDate;
+    public int getPublicationYear() {
+        return publicationYear;
     }
 
-    public void setPublicationDate(String publicationDate) {
-        this.publicationDate = publicationDate;
+    public void setPublicationYear(int publicationYear) {
+        this.publicationYear = publicationYear;
+    }
+
+
+    public boolean getSaleByDate(){
+        boolean a=true;
+        if((2021 - publicationYear > 10) == a){
+            System.out.println(price - price* 0.2);
+        }
+        else{
+            System.out.println(price);
+        }
+        return false;
     }
 
     @Override
     public String toString() {
         return "BookInfo{" +
                 "barcode='" + barcode + '\'' +
-                ", borrowed='" + borrowed + '\'' +
-                ", dueDate='" + dueDate + '\'' +
-                ", price='" + price + '\'' +
+                ", price=" + price +
                 ", dateOfPurchase='" + dateOfPurchase + '\'' +
-                ", publicationDate='" + publicationDate + '\'' +
+                ", publicationYear=" + publicationYear +
                 '}';
     }
 }
