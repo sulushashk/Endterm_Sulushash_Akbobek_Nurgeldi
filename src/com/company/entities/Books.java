@@ -8,6 +8,7 @@ public class Books {
     private String lang;
     private int numberOfPage;
     private String author;
+
     public Books(int ISBN, String title,String genre, String publisher, String lang, int numberOfPage, String author) {
         setISBN(ISBN);
         setTitle(title);
@@ -71,7 +72,6 @@ public class Books {
     public void setAuthor(String author) {
         this.author = author;
     }
-
 
     @Override
     public String toString() {

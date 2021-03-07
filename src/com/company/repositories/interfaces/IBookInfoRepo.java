@@ -1,6 +1,6 @@
 package com.company.repositories.interfaces;
 
-import com.company.entities.Librarian;
+import com.company.entities.BookInfo;
 
 public interface IBookInfoRepo{
     boolean addBookInfo(BookInfo bookInfo);

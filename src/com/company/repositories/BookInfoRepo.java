@@ -103,7 +103,6 @@ public class BookInfoRepo implements IBookInfoRepo {
 
     @Override
     public boolean getSaleByDate() {
-
         return false;
     }
 }

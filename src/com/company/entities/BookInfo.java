@@ -2,19 +2,18 @@ package com.company.entities;
 
 public class BookInfo extends Books{
     private String barcode;
-    private String borrowed;
-    private String dueDate;
-    private String price;
+    private int price;
     private String dateOfPurchase;
-    private String publicationDate;
+    private int publicationYear;
 
-    public BookInfo(String barcode, String borrowed, String dueDate, String price, String dateOfPurchase, String publicationDate) {
+    public BookInfo(String barcode, int price, String dateOfPurchase, int publicationYear) {
         this.barcode = barcode;
-        this.borrowed = borrowed;
-        this.dueDate = dueDate;
         this.price = price;
         this.dateOfPurchase = dateOfPurchase;
-        this.publicationDate = publicationDate;
+        this.publicationYear=publicationYear;
+    }
+
+    public BookInfo(int id, String dateOfMembership, int totalBooksCheckedOut) {
     }
 
     public String getBarcode() {
@@ -23,22 +22,6 @@ public class BookInfo extends Books{
 
     public void setBarcode(String barcode) {
         this.barcode = barcode;
-    }
-
-    public String getBorrowed() {
-        return borrowed;
-    }
-
-    public void setBorrowed(String borrowed) {
-        this.borrowed = borrowed;
-    }
-
-    public String getDueDate() {
-        return dueDate;
-    }
-
-    public void setDueDate(String dueDate) {
-        this.dueDate = dueDate;
     }
 
     public int getPrice() {
