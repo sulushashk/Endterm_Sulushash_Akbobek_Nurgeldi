@@ -24,8 +24,8 @@ public class BookInfoContr {
         return ( removed ? "Information about book was removed" : "It has trouble");
     }
 
-    public String getSaleByDate(){
-        boolean gotten = repo1.getSaleByDate();
-        return ( gotten ? "Sale was appointed" : "Sale is not valid");
+    public String getSaleByDate(int year1, int year2){
+        BookInfo gotten = repo1.getSaleByDate(year1,year2);
+        return ( gotten==null ? "Sale was appointed" : "Sale is not valid");
     }
 }

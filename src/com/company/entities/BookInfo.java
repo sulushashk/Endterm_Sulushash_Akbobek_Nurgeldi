@@ -1,6 +1,7 @@
 package com.company.entities;
 
-public class BookInfo extends Books{
+
+public class BookInfo extends Books {
     private String barcode;
     private int price;
     private String dateOfPurchase;
@@ -14,6 +15,11 @@ public class BookInfo extends Books{
     }
 
     public BookInfo(int id, String dateOfMembership, int totalBooksCheckedOut) {
+    }
+
+    public BookInfo(int price, int publicationYear) {
+        setPrice(price);
+        setPublicationYear(publicationYear);
     }
 
     public String getBarcode() {
@@ -50,8 +56,7 @@ public class BookInfo extends Books{
 
 
     public boolean getSaleByDate(){
-        boolean a=true;
-        if((2021 - publicationYear > 10) == a){
+        if((2021 - publicationYear > 10) == true){
             System.out.println(price - price* 0.2);
         }
         else{

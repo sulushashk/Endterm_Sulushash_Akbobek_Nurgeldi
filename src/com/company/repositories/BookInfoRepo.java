@@ -102,7 +102,30 @@ public class BookInfoRepo implements IBookInfoRepo {
     }
 
     @Override
-    public boolean getSaleByDate() {
-        return false;
+    public BookInfo getSaleByDate(int year1, int year2) {
+        Connection con = null;
+        try {
+            con = db.getConnection();
+            var sql = "SELECT price FROM BookInfo Where publicationYear BETWEEN '" + year1 + "'AND'" + year2 + "'";
+            PreparedStatement st = con.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+
+            if (rs.next()) {
+                BookInfo bookInfo = new BookInfo(rs.getInt("price"),
+                        rs.getInt("publicationYear"));
+                return bookInfo;
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+        return null;
     }
 }

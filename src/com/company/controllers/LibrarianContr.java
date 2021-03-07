@@ -14,8 +14,8 @@ public class LibrarianContr {
         return (librarian == null ? "Librarian with this id is not found" : librarian.toString());
     }
 
-    public String addLibrarian(int id, String name, int salary){
-        Librarian librarian = new Librarian(id,name, salary);
+    public String addLibrarian(String name, int salary){
+        Librarian librarian = new Librarian(name, salary);
         boolean created= repo4.addLibrarian(librarian);
 
         return  (created ?  "Information about librarian is successfully added!":" addition is failed!");

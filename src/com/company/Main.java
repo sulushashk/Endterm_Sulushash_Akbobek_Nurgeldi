@@ -10,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
         IDB db = new PostgresDB();
-        IBookInfoRepo repo1 = new BookInfoRepo(db) {
+        IBookInfoRepo repo1 = new BookInfoRepo(db);
             IBookRepo repo2 = new BookRepositories(db);
             ILibraryRepo repo3 = new LibraryRepo(db);
             ILibrarianRepo repo4 = new LibrarianRepo(db);
@@ -22,6 +22,10 @@ public class Main {
             ReaderContr contr5 = new ReaderContr(repo5);
             MyApplication app = new MyApplication(contr1, contr2, contr3, contr4, contr5);
             app.start();
-        }
     }
 }
+/*We have created 5 entities for Library Management System. There are
+Books, Information about books, main employee of library is Librarian,
+Also library and Readers of books.
+ */
+

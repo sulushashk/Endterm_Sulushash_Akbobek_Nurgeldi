@@ -11,6 +11,11 @@ public class Librarian extends Books{
         this.salary = salary;
     }
 
+    public Librarian(String name, int salary) {
+        setName(name);
+        setSalary(salary);
+    }
+
     public int getId() {
         return id;
     }
